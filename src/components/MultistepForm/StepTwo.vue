@@ -29,7 +29,7 @@
       <button
         type="submit"
         class="multistep-form__button"
-        :disabled="buttonDisabled"
+        :disabled="buttonDisabled || disabledButton"
       >
         Проверить код
       </button>
@@ -63,6 +63,10 @@ export default {
     stepsCount: {
       type: Number,
       default: 1,
+    },
+    disabledButton: {
+      type: Boolean,
+      default: false,
     },
   },
   components: { ProgressBar },

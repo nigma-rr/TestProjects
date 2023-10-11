@@ -25,6 +25,7 @@
         :is="currentStepComponent"
         :stepNumber="currentStep"
         :stepsCount="stepsCount"
+        :disabledButton="disabledButton"
         :formData="formData"
         @next-step="nextStep"
         @prev-step="changeStep"
@@ -60,6 +61,7 @@ export default {
       checkAgreement: false,
       stepsCount: 3,
       checkLoaderStatus: false,
+      disabledButton: false,
       headers: {
         'Content-Type': 'application/json',
         Authorization: 'Bearer 12345',
@@ -92,6 +94,7 @@ export default {
         this.currentStep = step
         return
       }
+      this.disabledButton = true
       this.mockRequest(data, this.headers)
         .then((response) => {
           const responseData = {
@@ -100,6 +103,7 @@ export default {
           }
           console.log(responseData)
           this.changeStep(step, data)
+          this.disabledButton = false
         })
         .catch(() => {
           const responseData = {

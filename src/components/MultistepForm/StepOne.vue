@@ -157,7 +157,11 @@
           документов в электронном виде</span
         >
       </label>
-      <button type="submit" class="multistep-form__button multistep-form__next">
+      <button
+        type="submit"
+        :disabled="disabledButton"
+        class="multistep-form__button multistep-form__next"
+      >
         Продолжить
       </button>
     </form>
@@ -179,6 +183,10 @@ export default {
     stepsCount: {
       type: Number,
       default: 1,
+    },
+    disabledButton: {
+      type: Boolean,
+      default: false,
     },
     formData: {
       type: Object,
