@@ -115,13 +115,7 @@
         />
         <div
           class="multistep-form__form-error"
-          v-if="$v.formDataObj.email.$dirty && !$v.formDataObj.email.required"
-        >
-          Поле обязательно к заполнению
-        </div>
-        <div
-          class="multistep-form__form-error"
-          v-else-if="!$v.formDataObj.email.email"
+          v-if="$v.formDataObj.email.$dirty && !$v.formDataObj.email.email"
         >
           Введите корректный E-mail
         </div>
@@ -210,7 +204,7 @@ export default {
   validations: {
     formDataObj: {
       name: { required },
-      email: { required, email },
+      email: { email },
       surname: { required },
       lastname: { required },
       date: { required },
