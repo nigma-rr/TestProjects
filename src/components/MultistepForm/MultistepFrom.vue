@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      currentStep: 3,
+      currentStep: 1,
       formData: {
         agreement: true,
       },
@@ -123,7 +123,6 @@ export default {
       this.formData = { ...this.formData, ...data }
       this.checkAgreement = true
       this.checkLoaderStatus = true
-      console.log(this.formData)
       this.mockRequest(this.formData, this.headers)
         .then((response) => {
           const responseData = {
