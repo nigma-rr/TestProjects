@@ -109,8 +109,7 @@
           v-model.trim="formDataObj.email"
           placeholder="E-mail"
           :class="{
-            invalid:
-              $v.formDataObj.email.$dirty && !$v.formDataObj.email.required,
+            invalid: $v.formDataObj.email.$dirty && !$v.formDataObj.email.email,
           }"
         />
         <div
